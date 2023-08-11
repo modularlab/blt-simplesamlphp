@@ -1,40 +1,47 @@
 {
-  "name": "acquia/blt-simplesamlphp",
-  "description": "SimpleSAMLPhp integration for Acquia BLT",
-  "license": "GPL-2.0+",
-  "authors":[
-    {
-      "name": "Acquia Engineering",
-      "homepage": "https://www.acquia.com",
-      "role": "Maintainer"
-    }
-  ],
-  "repositories": {
-    "drupal": {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    },
-    "simplesamlphp_auth": {
-      "type": "package",
-      "package": {
-        "name": "utdk/simplesamlphp_auth",
-        "version": "4.0.2",
-        "type": "drupal-module",
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/utdk/simplesamlphp_auth/archive/refs/tags/4.0.2.zip"
+    "name": "acquia/blt-simplesamlphp",
+    "description": "SimpleSAMLPhp integration for Acquia BLT",
+    "license": "GPL-2.0+",
+    "authors":[
+        {
+            "name": "Acquia Engineering",
+            "homepage": "https://www.acquia.com",
+            "role": "Maintainer"
         }
-      }
+    ],
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "simplesamlphp_auth": {
+            "type": "package",
+            "package": {
+                "name": "utdk/simplesamlphp_auth",
+                "version": "4.0.2",
+                "type": "drupal-module",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/utdk/simplesamlphp_auth/archive/refs/tags/4.0.2.zip"
+                }
+            }
+        }
     },
-  },
-  "require": {
-    "utdk/simplesamlphp_auth": "^3.0"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "autoload": {
-    "psr-4": {
-      "Acquia\\BltSimplesamlphp\\": "./src/"
+    "require": {
+        "utdk/simplesamlphp_auth": "^4.0",
+        "utexas/simplesamlphp": "^0.1.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Acquia\\BltSimplesamlphp\\": "./src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "utexas/simplesaml-fork-installer": true
+        }
     }
-  }
 }
